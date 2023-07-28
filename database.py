@@ -111,7 +111,7 @@ class Database:
         Args:
             data (dict): Der Datensatz, der gespeichert werden soll.
         """
-        self.loh_action("Schreibe Rohdaten...")
+        self.log_action("Schreibe Rohdaten...")
         self._write(data)
 
     def delete_key(self, key: str) -> None:
