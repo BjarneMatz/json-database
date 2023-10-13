@@ -69,8 +69,12 @@ class Database:
         """
         data = self._read()
         self.log_action(f"Hole Wert von Schlüssel '{key}'...")
-        value = data[key]
-        return value
+        try:
+            value = data[key]
+            return value
+        except KeyError:
+            return None
+       
 
     def get_keys(self) -> list:
         """Gibt alle Schlüssel der Datenbank zurück.
