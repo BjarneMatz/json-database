@@ -46,7 +46,7 @@ class Database:
             dict: Die Datenbank als Dictionary.
         """
         self.log_action("Lese aus Datenbank...")
-        with open(self.database_path, "r") as file:
+        with open(self.database_path, "r", encoding="utf-8") as file:
             return json.load(file)
 
     def _write(self, data: dict) -> None:
@@ -55,7 +55,7 @@ class Database:
         Args:
             data (dict): Der Datensatz, der gespeichert werden soll.
         """
-        with open(self.database_path, "w") as file:
+        with open(self.database_path, "w", encoding="utf-8") as file:
             self.log_action("Schreibe in Datenbank...")
             json.dump(data, file, indent=4)
 
